@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 2004853236}
   - component: {fileID: 2004853237}
   m_Layer: 0
-  m_Name: Tester
+  m_Name: Client
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,8 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b77f5e5a30c4459ae147937dd5cf24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <QuadMesh>k__BackingField: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
-  <QuadMaterial>k__BackingField: {fileID: 2100000, guid: ab1bd51f786a646a3bb47a1959ca1e19, type: 2}
+  _quadMesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  _quadMaterial: {fileID: 2100000, guid: ab1bd51f786a646a3bb47a1959ca1e19, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
