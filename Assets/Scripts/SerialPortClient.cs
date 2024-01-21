@@ -19,6 +19,7 @@ public sealed class SerialPortClient : MonoBehaviour
     SlipParser _slip;
     CommandParser _parser;
     ScreenRenderer _renderer;
+    InputHandler _input;
 
     void OpenPort(string name)
     {
@@ -45,6 +46,11 @@ public sealed class SerialPortClient : MonoBehaviour
         // Unsupported message
     }
 
+    void SendInput()
+    {
+        _port.Write(new [] {(byte)'C', _input.CurrentState}, 0, 2);
+    }
+
     #endregion
 
     #region MonoBehaviour implementation
@@ -55,6 +61,7 @@ public sealed class SerialPortClient : MonoBehaviour
         _slip = new SlipParser();
         _parser = new CommandParser();
         _renderer = new ScreenRenderer(_quadMesh, _quadMaterial);
+        _input = new InputHandler();
 
         _slip.OnReceived = OnMessageReceived;
         OpenPort(SerialPortUtil.DetectPort());
@@ -67,6 +74,7 @@ public sealed class SerialPortClient : MonoBehaviour
     {
         while (_port.BytesToRead > 0) _slip.FeedByte(_port.ReadByte());
         _renderer.DrawBuffered();
+        if (_input.Update()) SendInput();
     }
 
     #endregion
