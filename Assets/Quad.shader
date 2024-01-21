@@ -1,4 +1,4 @@
-Shader "Unlit/Text"
+Shader "Unlit/Quad"
 {
     Properties
     {
@@ -10,8 +10,8 @@ Shader "Unlit/Text"
 #include "UnityCG.cginc"
 
 sampler2D _MainTex;
-uint _Character;
-float2 _Position;
+uint _Code;
+float4 _Coords;
 float4 _Background;
 float4 _Foreground;
 
@@ -20,8 +20,8 @@ void Vertex(float4 position : POSITION,
             out float4 outPosition : SV_Position,
             out float2 outUV : TEXCOORD0)
 {
-    float2 p = (_Position + 8.0 * uv) / _ScreenParams;
-    float2 t = float2(_Character & 0xf, (_Character >> 4));
+    float2 p = (_Coords.xy + _Coords.zw * uv) / _ScreenParams;
+    float2 t = float2(_Code & 0xf, (_Code >> 4));
     t = (t + uv) / 16;
     t.y = 1 - t.y;
     outPosition = float4(p * 8 - 1, 0, 1);

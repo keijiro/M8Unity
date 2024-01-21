@@ -145,7 +145,7 @@ Camera:
   m_GameObject: {fileID: 189179055}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.09144712, g: 0.11091579, b: 0.14150941, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -167,8 +167,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.1
+  far clip plane: 100
   field of view: 60
   orthographic: 1
   orthographic size: 0.5
@@ -176,15 +176,15 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &189179058
@@ -211,7 +211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2004853236}
-  - component: {fileID: 2004853235}
+  - component: {fileID: 2004853237}
   m_Layer: 0
   m_Name: Tester
   m_TagString: Untagged
@@ -219,20 +219,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2004853235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004853234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b77f5e5a30c4459ae147937dd5cf24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <QuadMesh>k__BackingField: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
-  <TextMaterial>k__BackingField: {fileID: 2100000, guid: ab1bd51f786a646a3bb47a1959ca1e19, type: 2}
 --- !u!4 &2004853236
 Transform:
   m_ObjectHideFlags: 0
@@ -248,6 +234,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2004853237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004853234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b77f5e5a30c4459ae147937dd5cf24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <QuadMesh>k__BackingField: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  <QuadMaterial>k__BackingField: {fileID: 2100000, guid: ab1bd51f786a646a3bb47a1959ca1e19, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

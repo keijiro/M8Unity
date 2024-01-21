@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: 26b77f5e5a30c4459ae147937dd5cf24
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - <QuadMesh>k__BackingField: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  - <QuadMaterial>k__BackingField: {fileID: 2100000, guid: ab1bd51f786a646a3bb47a1959ca1e19, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
