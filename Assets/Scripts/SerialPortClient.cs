@@ -47,9 +47,7 @@ public sealed class SerialPortClient : MonoBehaviour
     }
 
     void SendInput()
-    {
-        _port.Write(new [] {(byte)'C', _input.CurrentState}, 0, 2);
-    }
+      => _port.Write(new [] {(byte)'C', _input.CurrentState}, 0, 2);
 
     #endregion
 
@@ -73,9 +71,11 @@ public sealed class SerialPortClient : MonoBehaviour
     void Update()
     {
         while (_port.BytesToRead > 0) _slip.FeedByte(_port.ReadByte());
-        _renderer.DrawBuffered();
         if (_input.Update()) SendInput();
     }
+
+    void OnPostRender()
+      => _renderer.DrawBuffered();
 
     #endregion
 }

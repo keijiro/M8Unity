@@ -20,14 +20,11 @@ public readonly struct DrawCommand
 
     public static DrawCommand
       Character(int code, int x, int y, Color32 bg, Color32 fg)
-      => new DrawCommand(code, x, y, 8, 8, bg, fg);
+      => new DrawCommand(code, x - 2, y + 3, 8, 8, bg, fg);
 
     public static DrawCommand
       Rectangle(int x, int y, int w, int h, Color32 color)
-    {
-        if (w == 320 && h == 340) (w, h) = (0, 0);
-        return new DrawCommand(0, x, y, w, h, color, color);
-    }
+      => new DrawCommand(0, x, y, w, h, color, color);
 }
 
 } // namespace M8

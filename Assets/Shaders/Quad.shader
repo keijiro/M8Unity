@@ -39,10 +39,9 @@ float4 Fragment(float4 position : SV_Position,
 
     SubShader
     {
-        Cull Off
-        ZTest Always
         Pass
         {
+            Cull Off ZTest Always ZWrite Off
             CGPROGRAM
             #pragma vertex Vertex
             #pragma fragment Fragment
